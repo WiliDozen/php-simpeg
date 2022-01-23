@@ -1,5 +1,16 @@
 <?php
 
+session_start();
+
+//cek login jika gagal lempar kembali ke login.php
+if (!isset($_SESSION["login"])){
+    echo "<script>
+    alert('Anda harus login terlebih dahulu');
+    document.location.href = 'login.php';
+    </script>";
+exit;
+}
+
 $judul = "Daftar Bidang";
 
 include "layout/header.php";
@@ -13,13 +24,13 @@ if (isset($_POST['tambah'])) {
         echo "<script>
                 alert('Data Bidang Berhasil Ditambahkan'); 
                 document.location.href = 'daftar-bidang.php';
-             </script>";
+            </script>";
     } else {
         // pesan gagal
         echo "<script>
                 alert('Data Bidang Gagal Ditambahkan');
                 document.location.href = 'daftar-bidang.php';
-             </script>";
+            </script>";
     }
 }
 
@@ -41,6 +52,7 @@ if (isset($_POST['tambah'])) {
     }
 
 ?>
+
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">

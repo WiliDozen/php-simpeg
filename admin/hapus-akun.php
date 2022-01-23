@@ -13,19 +13,19 @@ exit;
 
 require "config/core.php"; // panggil file config/core.php
 
-$id_pegawai = (int)$_GET['id_pegawai'];
+$id_akun = (int)$_GET['id_akun'];
 
-// hapus pegawai
-if (hapus_pegawai($id_pegawai) > 0) {
+// hapus akun
+if (hapus_akun($id_akun) > 0) {
     // pesan berhasil
     echo "<script>
-                alert('Data Pegawai Berhasil Dihapus'); 
-                document.location.href = 'daftar-pegawai.php';
-             </script>";
+                alert('Data akun Berhasil Dihapus'); 
+                document.location.href = 'daftar-akun.php';
+        </script>";
 } else {
     // pesan gagal
     echo "<script>
-                alert('Data Pegawai Gagal Dihapus');
-                document.location.href = 'daftar-pegawai.php';
-             </script>";
+                alert('Data akun Gagal Dihapus');
+                document.location.href = 'daftar-akun.php';
+        </script>";
 }
